@@ -41,7 +41,7 @@ module.exports = async (user) => {
             arr.push({name: name[i], eff: eff[i], taskAtWork: taskAtWork[i]})
         }
         try {
-            fs.unlinkSync('./files/' + user.path + '.json',
+            fs.unlinkSync('../ActiveApp/active/src/components/' + user.path + '/' + user.path + '.json',
                 (err => {
                     if (err) console.log(err);
                     else {
@@ -50,12 +50,12 @@ module.exports = async (user) => {
                 })
             )
         } catch (error) {
-            await browser.close()
+            // await browser.close()
             console.log(error)
         }
         
         const json = JSON.stringify(arr).replace(/(?=[,\[\]])/, ' \n')  
-        fs.writeFileSync('./files/' + user.path + '.json', json);     
+        fs.writeFileSync('../ActiveApp/active/src/components/' + user.path + '/' + user.path + '.json', json);     
         console.log('parseend')
         await browser.close()
     } catch (error) {
