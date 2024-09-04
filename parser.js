@@ -7,7 +7,7 @@ module.exports = async (user) => {
         
         const browser = await puppeteer.launch(
             {
-                headless: true
+                headless: false
             }
         );
         const page = await browser.newPage();
@@ -30,7 +30,7 @@ module.exports = async (user) => {
                 els => els.map(el => el.innerText)      
         )
 
-        let eff = await page.$$eval('span.main-grid-cell-content > a:not(js-id-department)', 
+        let eff = await page.$$eval('div.main-grid-cell-inner > span.main-grid-cell-content > a[style="color:#333;"]', 
             els => els.map(el => el.innerText)
         )
 
