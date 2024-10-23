@@ -1,18 +1,18 @@
 const parser = require('./parser')
 const users = require('./users')
 
+const user = {
+    id: 8,
+    name: 'e.lebasov',
+    pass: 'Sextremes1!',
+    path: 'gk_active'
+}
+
+
+
 const main = () => {
-    try {
-        users.forEach(async el => {
-            await parser(el)
-            // await window.location.reload(true)
-            await console.log(el.name);
-        })
-        console.log("First");
-        // clearInterval()
-    } catch (error) {
-    console.log(error)
-    }
+    parser(user)
+
 }
 
 main()
