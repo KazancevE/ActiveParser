@@ -85,9 +85,9 @@ module.exports = async (user) => {
         fs.writeFileSync('../ActiveParser/files/active.json', json);  
         // fs.writeFileSync('../ActiveApp/active/src/components/' + user.path + '/' + user.path + '.json', json);     
         console.log('parseend')
-        // await browser.close()
+        await browser.close()
     } catch (error) {
-        // await browser.close()
+        await browser.close()
 
         console.log(error)
     }
