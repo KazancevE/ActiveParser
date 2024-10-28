@@ -87,8 +87,9 @@ module.exports = async (user) => {
         console.log('parseend')
         await browser.close()
     } catch (error) {
+        console.log(error)
         await browser.close()
 
-        console.log(error)
+        
     }
 } 
